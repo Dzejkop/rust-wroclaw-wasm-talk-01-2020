@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello wasm-pack!</title>
+</head>
+
+<body>
+    <noscript>This page contains webassembly and javascript content, please enable javascript in your
+        browser.</noscript>
+    <div>
+        <p>Tick speed</p>
+        <input type="range" min="10" max="1000" value="50" id="tickSpeed" />
+    </div>
+    <div>
+        <p>Rules</p>
+        <input type="string" value="B2/S23" id="rules" />
+        <p id="rulesWarning" style="display: none; color: red;">Invalid rule</p>
+        <button id="rulesButton">Ok</button>
+    </div>
+    <div>
+        <p>Cell size</p>
+        <input type="number" min="1" max="100" value="4" id="cellSize" />
+    </div>
+    <canvas id="main" width="800" height="600"></canvas>
+    <script src="./bootstrap.js"></script>
+</body>
+
+</html>

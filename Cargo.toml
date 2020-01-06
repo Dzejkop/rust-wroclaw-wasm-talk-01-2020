@@ -1,0 +1,26 @@
+[package]
+name = "wasm-conway"
+version = "0.1.0"
+authors = ["Dzejkop <jakubtrad@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["wasm"]
+wasm = ["wasm-bindgen"]
+python_wasmtime = []
+
+[dependencies]
+wasm-bindgen = { version = "0.2", optional = true }
+wee_alloc = { version = "0.4.2", optional = true }
+
+rand = { version = "0.7.2", features = ["small_rng"] }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.2"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
