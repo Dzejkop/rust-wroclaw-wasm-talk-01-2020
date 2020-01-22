@@ -5,37 +5,37 @@
     (local $tmp i32)
 
     i32.const 0
-    local.set $a
+    set_local $a
 
     i32.const 1
-    local.set $b
+    set_local $b
 
     block $B
       loop $L
-        local.get $n
+        get_local $n
         i32.eqz
         br_if $B
 
-        local.get $n
+        get_local $n
         i32.const -1
         i32.add
-        local.set $n
+        set_local $n
 
-        local.get $a
-        local.get $b
+        get_local $a
+        get_local $b
         i32.add
-        local.set $tmp
+        set_local $tmp
 
-        local.get $b
-        local.set $a
+        get_local $b
+        set_local $a
 
-        local.get $tmp
-        local.set $b
+        get_local $tmp
+        set_local $b
 
         br $L
       end
     end
-    local.get $b
+    get_local $b
   )
   (export "fib" (func $speed_fib))
 )
